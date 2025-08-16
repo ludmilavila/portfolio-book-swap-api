@@ -1,4 +1,4 @@
-const { livros } = require('../models/data');
+const data = require('../models/data');
 const { v4: uuidv4 } = require('uuid');
 
 exports.cadastrar = (req, res) => {
@@ -13,11 +13,11 @@ exports.cadastrar = (req, res) => {
     descricao,
     usuarioId: req.user.id
   };
-  livros.push(livro);
+  data.livros.push(livro);
   res.status(201).json({ message: 'Livro cadastrado com sucesso.' });
 };
 
 exports.listar = (req, res) => {
-  const meusLivros = livros.filter(l => l.usuarioId === req.user.id);
+  const meusLivros = data.livros.filter(l => l.usuarioId === req.user.id);
   res.json(meusLivros);
 };
