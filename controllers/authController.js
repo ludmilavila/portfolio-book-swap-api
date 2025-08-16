@@ -1,11 +1,11 @@
-const { usuarios } = require('../models/data');
+const data = require('../models/data');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const SECRET = 'bookswap_secret';
 
 exports.login = (req, res) => {
   const { email, senha } = req.body;
-  const usuario = usuarios.find(u => u.email === email);
+  const usuario = data.usuarios.find(u => u.email === email);
   if (!usuario) return res.status(401).json({ message: 'Credenciais inválidas.' });
   if (!bcrypt.compareSync(senha, usuario.senha)) {
     return res.status(401).json({ message: 'Credenciais inválidas.' });

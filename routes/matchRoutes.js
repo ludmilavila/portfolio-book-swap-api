@@ -3,7 +3,6 @@ const router = express.Router();
 const matchController = require('../controllers/matchController');
 const auth = require('../middlewares/auth');
 
-router.get('/buscar', auth, matchController.buscarCompatibilidade);
 router.post('/', auth, matchController.criarMatch);
 router.post('/:id/resposta', auth, matchController.responderMatch);
 

@@ -31,7 +31,22 @@
           }
         },
         "responses": {
-          "200": { "description": "Token gerado com sucesso." },
+          "200": { 
+            "description": "Token gerado com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": { "type": "string" }
+                  }
+                },
+                "example": {
+                  "token": "string"
+                }
+              }
+            } 
+          },
           "401": { "description": "Credenciais inválidas." },
           "405": { "description": "Método não permitido." }
         }
@@ -58,7 +73,22 @@
           }
         },
         "responses": {
-          "201": { "description": "Usuário cadastrado com sucesso." },
+          "201": { 
+            "description": "Usuário cadastrado com sucesso.", 
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string" }
+                  }
+                },
+                "example": {
+                  "message": "string"
+                }
+              }
+            }
+          },
           "400": { "description": "Dados inválidos ou e-mail já cadastrado." },
           "405": { "description": "Método não permitido." }
         }
@@ -86,7 +116,22 @@
           }
         },
         "responses": {
-          "201": { "description": "Livro cadastrado com sucesso." },
+          "201": { 
+            "description": "Livro cadastrado com sucesso." ,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string" }
+                  }
+                },
+                "example": {
+                  "message": "string"
+                }
+              }
+            }
+          },
           "400": { "description": "Dados inválidos." },
           "401": { "description": "Autenticação necessária ou inválida." },
           "405": { "description": "Método não permitido." }
@@ -97,7 +142,35 @@
         "summary": "Listar meus livros",
         "security": [{ "bearerAuth": [] }],
         "responses": {
-          "200": { "description": "Lista de livros do usuário." },
+          "200": { 
+            "description": "Lista de livros do usuário.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string" },
+                      "titulo": { "type": "string" },
+                      "autor": { "type": "string" },
+                      "descricao": { "type": "string" },
+                      "usuarioId": { "type": "string" }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": "string",
+                    "titulo": "string",
+                    "autor": "string",
+                    "descricao": "string",
+                    "usuarioId": "string"
+                  }
+                ]
+              }
+            }
+          },
           "401": { "description": "Autenticação necessária ou inválida." },
           "405": { "description": "Método não permitido." }
         }
@@ -123,7 +196,22 @@
           }
         },
         "responses": {
-          "201": { "description": "Interesse cadastrado com sucesso." },
+          "201": { 
+              "description": "Interesse cadastrado com sucesso.", 
+              "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string" }
+                  }
+                },
+                "example": {
+                  "message": "string"
+                }
+              }
+            }
+          },
           "400": { "description": "Interesse já cadastrado ou inválido." },
           "401": { "description": "Autenticação necessária ou inválida." },
           "405": { "description": "Método não permitido." }
@@ -134,19 +222,31 @@
         "summary": "Listar meus interesses",
         "security": [{ "bearerAuth": [] }],
         "responses": {
-          "200": { "description": "Lista de interesses do usuário." },
-          "401": { "description": "Autenticação necessária ou inválida." },
-          "405": { "description": "Método não permitido." }
-        }
-      }
-    },
-    "/matches/buscar": {
-      "get": {
-        "tags": ["Matches"],
-        "summary": "Buscar compatibilidade",
-        "security": [{ "bearerAuth": [] }],
-        "responses": {
-          "200": { "description": "Lista de interesses compatíveis." },
+          "200": { 
+            "description": "Lista de interesses do usuário.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "string" },
+                      "livroId": { "type": "string" },
+                      "usuarioId": { "type": "string" }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": "string",
+                    "livroId": "string",
+                    "usuarioId": "string"
+                  }
+                ]
+              }
+            }  
+          },
           "401": { "description": "Autenticação necessária ou inválida." },
           "405": { "description": "Método não permitido." }
         }
@@ -172,7 +272,39 @@
           }
         },
         "responses": {
-          "201": { "description": "Match criado com sucesso." },
+          "201": { 
+            "description": "Match criado com sucesso.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string" },
+                    "match": {
+                      "type": "object",
+                      "properties": {
+                        "id": { "type": "string" },
+                        "livroId": { "type": "string" },
+                        "donoId": { "type": "string" },
+                        "interessadoId": { "type": "string" },
+                        "status": { "type": "string" }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "message": "string",
+                  "match": {
+                    "id": "string",
+                    "livroId": "string",
+                    "donoId": "string",
+                    "interessadoId": "string",
+                    "status": "string"
+                  }
+                }
+              }
+            }
+          },
           "400": { "description": "Match já existente ou dados inválidos." },
           "401": { "description": "Autenticação necessária ou inválida." },
           "405": { "description": "Método não permitido." }
@@ -207,7 +339,22 @@
           }
         },
         "responses": {
-          "200": { "description": "Match aceito ou recusado." },
+          "200": { 
+            "description": "Match aceito ou recusado.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": { "type": "string" }
+                  }
+                },
+                "example": {
+                  "message": "string"
+                }
+              }
+            }              
+          },
           "400": { "description": "Status inválido." },
           "401": { "description": "Autenticação necessária ou inválida." },
           "405": { "description": "Método não permitido." }
