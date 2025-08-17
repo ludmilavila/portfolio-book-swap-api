@@ -61,9 +61,14 @@ portfolio-book-swap-api/
 │   ├── matches.test.js            # Testes de matches
 │   ├── usuarios.test.js           # Testes de usuários
 │   └── interesses.test.js         # Testes de interesses
+│   └── performanceUsuarios.test.js# Testes de performance
 ├── mochawesome-report/             # Relatórios de teste (gerado automaticamente)
 ├── .env                            # Arquivo com variáveis de ambiente (não versionado)
 ├── .gitignore                      # Arquivos ignorados pelo Git
+├── config/
+│   └── config.local.json          # Configurações locais da aplicação
+├── utils/
+│   └── variaveis.js               # Utilitários para gerenciamento de variáveis
 └── docs/                           # Documentação adicional
 ```
 
