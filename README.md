@@ -228,7 +228,7 @@ npx mocha ./test/matches.test.js --timeout=200000
 Os testes geram relatórios HTML automáticos via Mochawesome no diretório `mochawesome-report/`. Após executar os testes, abra o arquivo `mochawesome.html` para visualizar os resultados detalhados.
 
 
-## 👤 Autora
+## 🌸 Autora
 
 **Ludmila Ávila** - [GitHub](https://github.com/ludmilavila)
 [LinkedIn](https://www.linkedin.com/in/ludmilaavilamendes)
