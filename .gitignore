@@ -10,3 +10,4 @@ coverage/
 .vscode/
 .idea/ 
 mochawesome-report/
+html-report.html

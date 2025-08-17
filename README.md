@@ -227,6 +227,80 @@ npx mocha ./test/matches.test.js --timeout=200000
 
 Os testes geram relatórios HTML automáticos via Mochawesome no diretório `mochawesome-report/`. Após executar os testes, abra o arquivo `mochawesome.html` para visualizar os resultados detalhados.
 
+## 🚀 Testes de Performance com K6
+
+### Tecnologia Utilizada
+**K6**: Ferramenta de teste de carga e performance
+
+### Objetivo de cada grupo de arquivos
+
+#### 📁 Pasta `config/`
+- **config.local.json**: Arquivo de configuração local contendo a URL base da API para testes
+
+#### 📁 Pasta `utils/`
+- **variaveis.js**: Módulo utilitário para gerenciar variáveis de ambiente e configuração
+
+#### 📁 Pasta `test/`
+- **performanceUsuarios.test.js**: Script de teste de performance para o endpoint POST `/usuarios`
+
+### Instalação e Execução
+
+#### 1. Instalar K6
+```bash
+# Windows
+choco install k6
+```
+
+#### 2. Executar Teste de Performance
+```bash
+# Execução básica
+k6 run test/performanceUsuarios.test.js
+
+# Certifique-se de passar a variável de ambiente BASE_URL, caso não esteja usando um config.local.json:
+k6 run test/performanceUsuarios.test.js -e BASE_URL=http://localhost:7000
+```
+
+
+### Geração de Relatórios
+
+#### Relatório HTML
+```bash
+K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run test/performanceUsuarios.test.js
+```
+
+
+### Interpretação dos Resultados
+
+#### Métricas Principais
+
+**HTTP Requests:**
+- **http_req_duration**: Tempo de resposta das requisições
+  - `avg`: Tempo médio de resposta
+  - `p(90)`: 90% das requisições respondem em menos de X ms
+  - `max`: Tempo máximo de resposta
+- **http_req_failed**: Taxa de falha das requisições
+- **http_reqs**: Total de requisições por segundo
+
+**Virtual Users (VUs):**
+- **vus**: Número atual de usuários virtuais ativos
+- **vus_max**: Número máximo de usuários virtuais
+
+**Performance:**
+- **iterations**: Total de iterações executadas
+- **iteration_duration**: Duração média de cada iteração
+
+#### Thresholds e Validações
+
+**Status de Sucesso:**
+- ✅ **http_req_duration p(90)<3000**: 90% das requisições respondem em menos de 3 segundos
+- ✅ **http_req_duration max<5000**: Nenhuma requisição demora mais de 5 segundos
+- ✅ **http_req_failed rate<0.01**: Taxa de falha menor que 1%
+
+**Análise dos Resultados:**
+- **Taxa de falha alta**: Pode indicar problemas de validação, autenticação ou limitações da API
+- **Tempo de resposta alto**: Pode indicar gargalos de performance ou sobrecarga do sistema
+- **VUs baixo**: Pode indicar que o sistema não consegue suportar a carga esperada
+
 
 ## 🌸 Autora
 
