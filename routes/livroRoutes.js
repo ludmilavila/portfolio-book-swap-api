@@ -7,7 +7,7 @@ router.post('/', auth, livroController.cadastrar);
 router.get('/', auth, livroController.listar);
 
 router.all('/', (req, res) => {
-  res.status(405).json({ message: 'Método não permitido.' });
+  res.status(500).json({ message: 'Internal Server Error' });
 });
 
 module.exports = router;
