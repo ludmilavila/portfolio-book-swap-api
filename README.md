@@ -307,7 +307,7 @@ K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run test/perfo
 - **VUs baixo**: Pode indicar que o sistema não consegue suportar a carga esperada
 
 
-## 🌸 Autora
+## 🌸 Desenvolvido por:
 
 **Ludmila Ávila** - [GitHub](https://github.com/ludmilavila)
 [LinkedIn](https://www.linkedin.com/in/ludmilaavilamendes)
