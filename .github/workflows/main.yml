@@ -24,6 +24,9 @@ jobs:
       - name: Aguardar servidor iniciar
         run: sleep 5  # ajuste se necessário
 
+      - name: Executar todos os testes de API
+        run: npm test
+
       - name: Configurar o K6
         uses: grafana/setup-k6-action@v1
         with:
