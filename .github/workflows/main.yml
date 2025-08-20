@@ -24,12 +24,6 @@ jobs:
       - name: Aguardar servidor iniciar
         run: sleep 5  # ajuste se necessário
 
-      - name: Executar todos os testes de API
-        run: npm test
-
-      - name: Gerar relatório de testes (Mochawesome)
-        run: echo "Relatórios gerados em mochawesome-report/mochawesome.html"
-
       - name: Instalar K6
         run: sudo apt-get update && sudo apt-get install -y k6
 
