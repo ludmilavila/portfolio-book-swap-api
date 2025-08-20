@@ -24,8 +24,8 @@ jobs:
       - name: Aguardar servidor iniciar
         run: sleep 5  # ajuste se necessário
 
-      - name: Instalar K6
-        run: sudo apt-get update && sudo apt-get install -y k6
-
       - name: Executar teste de performance
-        run: k6 run test/performanceUsuarios.test.js
+        uses: grafana/k6-action@v0.1.0
+        with:
+          script: test/performanceUsuarios.test.js
+
