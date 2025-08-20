@@ -32,4 +32,4 @@ jobs:
       - name: Executar teste de performance
         uses: grafana/run-k6-action@v1
         with:
-          script: test/performanceUsuarios.test.js
+          path: test/performanceUsuarios.test.js
