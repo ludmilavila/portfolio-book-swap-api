@@ -27,7 +27,7 @@ jobs:
       - name: Configurar o K6
         uses: grafana/setup-k6-action@v1
         with:
-          k6-version: 'latest'
+          k6-version: '1.1.0'
 
       - name: Executar teste de performance
         uses: grafana/run-k6-action@v1
