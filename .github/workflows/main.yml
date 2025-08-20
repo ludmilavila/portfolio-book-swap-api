@@ -1,4 +1,4 @@
-name: Pipeline API - Portfolio Book Swap
+name: Pipeline Book Swap API
 
 on:
   workflow_dispatch:
