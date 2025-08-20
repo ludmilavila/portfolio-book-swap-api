@@ -35,10 +35,3 @@ jobs:
 
       - name: Executar teste de performance
         run: k6 run test/performanceUsuarios.test.js
-
-        - name: Executar todos os testes de API e salvar log
-        run: |
-          npm test > test-log.txt 2>&1 || true
-        - name: Exibir log dos testes
-        run: cat test-log.txt
-
