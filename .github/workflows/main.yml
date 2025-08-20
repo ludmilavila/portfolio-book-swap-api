@@ -24,8 +24,12 @@ jobs:
       - name: Aguardar servidor iniciar
         run: sleep 5  # ajuste se necessário
 
+      - name: Configurar o K6
+        uses: grafana/setup-k6-action@v1
+        with:
+          k6-version: 'latest'
+
       - name: Executar teste de performance
-        uses: grafana/k6-action@v0.1.0
+        uses: grafana/run-k6-action@v1
         with:
           script: test/performanceUsuarios.test.js
-
