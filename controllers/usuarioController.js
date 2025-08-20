@@ -9,7 +9,7 @@ exports.cadastrar = (req, res) => {
     return res.status(400).json({ message: 'Nome, e-mail e senha são obrigatórios.' });
   }
   if (data.usuarios.find(u => u.email === email)) {
-    return res.status(200).json({ message: 'Usuário cadastrado com sucesso.' });
+    return res.status(400).json({ message: 'E-mail já cadastrado.' });
   }
   const hash = bcrypt.hashSync(senha, 8);
   const usuario = { id: uuidv4(), nome, email, senha: hash };
