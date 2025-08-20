@@ -201,7 +201,7 @@ Os testes estão organizados por funcionalidade:
 
 #### Instale as dependências de teste
 ```bash
-npm install --save-dev mocha@11.7.1 chai@4.3.6 supertest@7.1.3
+npm install --save-dev mocha@11.7.1 chai@4.3.6 supertest@7.1.4
 npm install dotenv --save-dev
 ```
 
