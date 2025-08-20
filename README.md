@@ -45,7 +45,7 @@ portfolio-book-swap-api/
 │   ├── livroRoutes.js             # Rotas de livros
 │   ├── matchRoutes.js             # Rotas de matches
 │   └── usuarioRoutes.js           # Rotas de usuários
-├── fixtures/                      # Dados de teste
+├── fixtures/                       # Dados de teste
 │   ├── postInteresses.json        # Fixture para cadastro de interesses
 │   ├── postLivros.json            # Fixture para cadastro de livros
 │   ├── postLogin.json             # Fixture para login
@@ -55,7 +55,7 @@ portfolio-book-swap-api/
 ├── helpers/                        # Funções auxiliares
 │   ├── autenticacao.js            # Helper para autenticação nos testes
 │   └── interesses.js              # Helper para interesses nos testes
-├── test/                          # Testes automatizados
+├── test/                           # Testes automatizados
 │   ├── livros.test.js             # Testes de livros
 │   ├── login.test.js              # Testes de login
 │   ├── matches.test.js            # Testes de matches
@@ -187,7 +187,7 @@ http://localhost:7000/api-docs
 
 ### Estrutura dos Testes
 Os testes estão organizados por funcionalidade:
-- **usuarios.test.js** - Testes de cadastro e validação de usuários
+- **usuarios.test.js** - Testes de cadastro de usuários
 - **login.test.js** - Testes de autenticação
 - **livros.test.js** - Testes de cadastro de livros
 - **interesses.test.js** - Testes de interesses em livros
