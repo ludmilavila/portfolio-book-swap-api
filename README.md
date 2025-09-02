@@ -309,9 +309,9 @@ K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run test/perfo
 - **VUs baixo**: Pode indicar que o sistema não consegue suportar a carga esperada
 
 
-### Integração Contínua
+### 🔄 Integração Contínua
 Todos os testes automatizados, incluindo os testes de API e de performance com K6, podem ser executados na pipeline de CI/CD via GitHub Actions, clicando em **Run workflow**.  
-[Ver execuções da pipeline](https://github.com/ludmilavila/portfolio-book-swap-api/actions)
+[Ver execuções da pipeline](https://github.com/ludmilavila/portfolio-book-swap-api/actions/workflows/main.yml)
 
 
 ## 🌸 Desenvolvido por:
