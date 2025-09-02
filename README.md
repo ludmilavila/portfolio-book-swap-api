@@ -19,6 +19,7 @@
 
 ### Documentação
 - **Swagger/OpenAPI 3.0** - Documentação interativa da API
+- **[Wiki do Projeto](https://github.com/ludmilavila/portfolio-book-swap-api/wiki)** - Contém requisitos, plano de testes, casos de teste e histórico de defeitos
 
 ## 🏗️ Estrutura do Projeto
 
@@ -232,6 +233,7 @@ npx mocha ./test/matches.test.js --timeout=200000
 
 Os testes geram relatórios HTML automáticos via Mochawesome no diretório `mochawesome-report/`. Após executar os testes, abra o arquivo `mochawesome.html` para visualizar os resultados detalhados.
 
+
 ## 🚀 Testes de Performance com K6
 
 ### Tecnologia Utilizada
@@ -305,6 +307,11 @@ K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run test/perfo
 - **Taxa de falha alta**: Pode indicar problemas de validação, autenticação ou limitações da API
 - **Tempo de resposta alto**: Pode indicar gargalos de performance ou sobrecarga do sistema
 - **VUs baixo**: Pode indicar que o sistema não consegue suportar a carga esperada
+
+
+### Integração Contínua
+Todos os testes automatizados, incluindo os testes de API e de performance com K6, podem ser executados na pipeline de CI/CD via GitHub Actions clicando em **Run workflow**.  
+[Ver execuções da pipeline](https://github.com/ludmilavila/portfolio-book-swap-api/actions)
 
 
 ## 🌸 Desenvolvido por:
