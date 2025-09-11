@@ -308,6 +308,10 @@ K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=html-report.html k6 run test/perfo
 - **Tempo de resposta alto**: Pode indicar gargalos de performance ou sobrecarga do sistema
 - **VUs baixo**: Pode indicar que o sistema não consegue suportar a carga esperada
 
+### Observação
+Atualmente, os testes de performance foram realizados apenas no endpoint **POST /usuarios**.  
+Os requisitos listados são aplicáveis a todos os endpoints da API, mas os resultados ainda precisam ser validados para os demais.
+
 
 ### 🔄 Integração Contínua
 Todos os testes automatizados, incluindo os testes de API e de performance com K6, podem ser executados na pipeline de CI/CD via GitHub Actions, clicando em **Run workflow**.  
